@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style/cours.css') }}">
+<script src="{{url_for('static', filename='js/materials.js')}}"></script>
+
+
+{% endblock %}
+
+{% block content %}
+
+<main>
+
+    <div class="previous">
+        <a id="previous" href="">
+            <img src="{{ url_for('static', filename='assets/previous.png') }}" alt="">
+        </a>
+    </div>
+
+    <div class="next">
+        <a id="next" href="">
+            <img src="{{ url_for('static', filename='assets/next.png') }}" alt="">
+        </a>
+    </div>
+
+    <div class="lesson selectedLesson" id="protections">
+        
+    </div>
+
+    <div class="lesson" id="verrerie">
+        <!-- <header>
+            <h1>II - VERRERIE</h1>
+            <h2>II.1. Contenants et récipients</h2>
+            <nav>
+                <button id="1">II.1</button>
+                <button id="2">II.2</button>
+            </nav>
+        </header>
+        
+
+        <div id="becher" class="equipment">
+            <h2>Bécher</h2>
+            <section>
+                <div id="becherImg" class="imgContainer">
+                    <img src="{{url_for('static', filename='assets/becher.png')}}" alt="Bécher">
+                </div> 
+                <ul>
+                    Le bécher permet de contenir et mélanger des liquides. <br>
+                    Il permet aussi  de :
+                    <li>Prélever à la pipette,</li>
+                    <li>Chauffer un liquide s'il est en Pyrex,</li>
+                    <li>Réaliser une réaction chimique.</li>
+                </ul>
+            </section>
+        </div>
+        <hr>
+
+        <div id="tube-a-essai" class="equipment">
+            <h2>tube à essai</h2>
+            <section>
+                <div id="tube-a-essai-Img" class="imgContainer">
+                    <img src="" alt="tube à essai">
+                </div>
+                <p></p>
+            </section>
+        </div>
+        <hr>
+
+        <div id="erlenmeyer" class="equipment">
+            <h2>erlenmeyer</h2>
+            <section>
+                <div id="erlenmeyerImg" class="imgContainer">
+                    <img src="" alt="erlenmeyer">
+                </div>
+                <p></p>
+            </section>
+        </div>
+        <hr>
+
+        <div id="flacon" class="equipment">
+            <h2>flacon</h2>
+            <section>
+                <div id="flaconImg" class="imgContainer">
+                    <img src="" alt="flacon">
+                </div>
+                <p></p>
+            </section>
+        </div>
+        <hr>
+
+        <div id="verre-a-pied" class="equipment">
+            <h2>verre à pied</h2>
+            <section>
+                <div id="verre-a-pied-Img" class="imgContainer">
+                    <img src="" alt="verre à pied">
+                </div>
+                <p></p>
+            </section>
+        </div>
+        <hr>
+
+        <div id="ballon" class="equipment">
+            <h2>ballon</h2>
+            <section>
+                <div id="ballonImg" class="imgContainer">
+                    <img src="" alt="ballon">
+                </div>
+                <p></p>
+            </section>
+        </div>
+        <hr>
+
+
+        <div id="cristallisoir" class="equipment">
+            <h2>cristallisoir</h2>
+            <section>
+                <div id="cristallisoirImg" class="imgContainer">
+                    <img src="" alt="cristallisoir">
+                </div>
+                <p></p>
+            </section>
+        </div> -->
+
+    </div>
+
+
+
+    <div class="lesson" id="instruments">
+        <h1>III - INSTRUMENTS</h1>
+    </div>
+
+
+    <div class="lesson" id="accessories">
+        <h1>IV - ACCESSOIRES</h1>
+    </div>
+    
+
+    {% if lessonId %}
+    <script>
+        const next = document.querySelector("#next");
+        const previous = document.querySelector("#previous");
+        const allLessons = document.querySelectorAll(".lesson");
+        const lessonChosen = document.getElementById("{{lessonId}}");
+        const materials = window.data["{{lessonId}}"];
+
+        const select = selector => document.querySelector(selector);
+        const selectAll = (loc=document, selector) => loc.querySelectorAll(selector);
+        const create = el => document.createElement(el);
+        const getId = id => document.getElementById(id);
+    </script>
+    {% endif %}
+
+</main>
+
+
+
+{% endblock %}
+
+
+{% block script %}
+<script src="{{ url_for('static', filename='js/changeLesson.js') }}"></script>
+<script src="{{ url_for('static', filename='js/cours.js') }}"></script>
+
+
+{% endblock %}

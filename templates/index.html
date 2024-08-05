@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+
+<link rel="stylesheet" href="{{url_for('static', filename='style/home.css')}}">
+
+{% endblock %}
+
+{% block content %}
+
+<section id="home" class="">
+    <div class="content">
+        <img src="{{ url_for('static', filename='assets/Scientist.png') }}">
+        <div id="welcomeTxt">
+            <p>Salutations, jeune scientifique !</p>
+            <p>
+                Tu as besoin de réviser les notions autour des expériences de physique-chimie ?
+                <br>Tu es au bon endroit. Tu es ici pour apprendre les matériels pour réaliser tes expériences
+                scientifiques au
+                lycée.
+            </p>
+
+            <p>Clique sur "cours" pour apprendre les matériels.</p>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}

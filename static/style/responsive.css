@@ -1,0 +1,51 @@
+@media all and (max-width: 834px) {
+    
+
+    p {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+
+    section {
+        margin:0;
+    }
+
+    #home img {
+        width: 40%;
+    }
+
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        height: 50px;
+    }
+    
+    nav a {
+        text-decoration: 0;
+        color: rgba(0, 0, 0, 0.5);
+        margin-right: 20px;
+    }
+
+
+    footer .domain {
+        margin-left: 10px;
+        line-height: 35px;
+    }
+
+
+    footer .copyright {
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        margin-right: 10px;
+    }
+}

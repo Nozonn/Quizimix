@@ -1,0 +1,222 @@
+main {
+    grid-area: main;
+
+    margin-bottom: 5em;
+    margin-top: 2em;
+
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-areas: "previous content next";
+}
+
+.previous, .next {
+    width: 50%;
+    height: 90%;
+    justify-self: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.previous {
+    grid-area: previous;   
+}
+.next {
+    grid-area: next;
+}
+
+:is(.previous, .next) > a {
+    height: 100%;
+
+    display: grid;
+    place-items: center;
+}
+
+:is(.previous,  .next) > a >  img  {
+    width: 80%;
+    pointer-events: none;
+}
+
+:is(.previous, .next):hover, :is(.previous, .next):active {
+    border: 1px solid black;
+}
+
+.lesson {
+    grid-area: content;
+    justify-self: center;
+    background-color: white;
+
+    max-width: 1000px;
+    box-shadow: 0 0 5px 1px black, 0 0 10px 1px black, 0 0 5px black inset;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 30px;    
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.lesson:not(.selectedLesson) {
+    display: none;
+}
+
+/* ------------------------------------------------- */
+
+hr {
+    margin-bottom: 30px;
+    border-color: black;
+}
+
+/* ------------------------------------------------- */
+
+
+
+/* ------------------------------------------------------------ */
+
+.lesson > header {
+    margin: 10px 0;
+}
+
+/* ===== Plusieurs parties ===== */
+
+.lesson > header > h2 {
+    margin: 15px 0;
+}
+
+.lesson > header > nav {
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid black;
+    margin: 15px 0;
+    box-shadow: 0 0 2px 1px black;
+    border-radius: 20px 10px 20px 10px;
+}
+
+.lesson > header > nav > button {
+    background-color: transparent;
+    border: 0;
+    text-transform: capitalize;
+    width: 100%;
+    height: 100%;
+    transition: .5s;
+    color: black;
+}
+
+.lesson > header > nav > button:first-child {
+    border-radius: 15px 0 0 5px;
+}
+
+.lesson > header > nav > button:last-child {
+    border-radius: 0 5px 15px 0;
+}
+
+.lesson > header > nav > .btnNavMatActive {
+    background-color: black;
+    color: white;
+}
+
+/* ============================= */
+
+.equipment > h2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: underline;
+}
+
+.equipment > h2::first-letter {
+    text-transform: capitalize;
+}
+
+.equipment > section{
+    display: grid;
+    grid-template-areas: 
+    "img text";
+    grid-template-columns: 1fr minmax(200px, 2fr);
+    
+    grid-gap: 1px;
+
+    /* grid-area: "img";
+    grid-template-columns: 1fr; */
+}
+
+.lesson > #contentMat > section > .imgContainer {
+    grid-area: img;
+    width: 100%;
+    align-self: center;
+    justify-self: center;
+
+    border: 1px solid black;
+    
+}
+
+#becherImg, .imgContainer {
+    display: grid;
+    place-items: center;
+}
+
+.lesson > #contentMat > .equipment > section > .imgContainer > img {
+    width: 100%;
+}
+
+
+.equipment > section :where(p, ul) {
+    /* display: none; */
+    grid-area: text;
+    margin-top: 30px;   
+}
+
+
+.equipment > section > ul > li {
+    margin-left: 40px;
+}
+
+@media all and (max-width: 834px) {
+    .equipment > section {
+        display: grid;
+        
+        grid-template-areas: 
+        "img"
+        "text";
+        grid-template-columns: 1fr;
+        
+        gap: 1px;
+    }
+
+    main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr auto;
+        row-gap: 50px;
+        grid-template-areas: 
+        "content content"
+        "previous next";
+        
+    }
+
+    .previous, .next {
+        width: 50%;
+        height: 90%;
+    }
+
+    :is(.previous, .next) > a {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        place-items: center;
+    }
+    
+    :is(.previous,  .next) > a >  img  {
+        width: 80%;
+        pointer-events: none;
+    }
+
+    .lesson {
+        width: 80%;
+    }
+    
+}

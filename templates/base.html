@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Nozonn" />
+    <meta name="description" content="
+        Quizimix a pour but de t'aider et t'entrainer dans l'apprentissage 
+        du matériels
+        nécessaire aux expériences physiques et chimiques aux lycée.">
+
+    <title>Quizimix</title>
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/Atom.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
+    
+    {% block head %} {% endblock %}
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/responsive.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <header>
+        <h1><span>Quiz physique - chimie</span></h1>
+        <h1>matériels + expériences</h1>
+    </header>
+
+    <nav>
+        <a href="{{ url_for('menu') }}" id="menu">Menu</a>
+        <a href="{{ url_for('cours') }}" id="cours">Cours</a>
+        <a href="{{ url_for('quiz') }}" id="quiz">Quiz</a>
+        <a href="{{ url_for('game') }}" id="game">Jeu</a>
+    </nav>
+
+    <script>
+        document.getElementById("{{select}}").classList = "select"
+    </script>
+
+
+    {% block content %} {% endblock %}
+
+
+    <footer id="footer">
+        <div class="domain">
+            <p>QUIZIMIX</p>
+            <div class="socials">
+                <a href="https://github.com/Nozonn"><i class="fa fa-github"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright &copy; 2024. Nozonn. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    {% block script %} {% endblock %}
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Kite+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kite One", sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 50px 1fr 5em;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "main"
+    "footer";
+
+    background-color: rgba(238, 238, 238, 0.733);
+}
+
+html, body {
+    height: 100%;
+}
+
+/* header */
+header {
+    grid-area: header;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+header h1 {
+    text-transform: capitalize;
+}
+
+header h1 span {
+    text-transform: uppercase;
+}
+
+/* Header */
+
+/* Navigation Bar */
+
+nav {
+    grid-area: nav;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 50px;
+}
+
+nav a {
+    text-decoration: 0;
+    color: rgba(0, 0, 0, 0.5);
+    margin-right: 100px;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+nav .select {
+    /* color: white; */
+    padding: 5px;
+    border-radius: 10px;
+    color: black;
+    box-shadow: 0 0 5px black, 0 0 10px black;
+}
+
+nav a:hover {
+    /* font-size: 20px; */
+    transform: scale(1.5);
+    color: black;
+}
+
+nav > a.select:hover  {
+    box-shadow: none;
+}
+
+
+/* Navigation Bar */
+
+/* Section Menu */
+
+section {
+    margin: 10px;
+}
+
+section .content {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35em;
+}
+
+section .content img {
+    width: 15%;
+}
+
+section .content #welcomeTxt {
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    --size: 18em;
+    height: var(--size);
+    width: var(--size);
+    font-size: 20px;
+    border-radius: 20px;
+
+    box-shadow: 0 0 5px 1px black;
+}
+
+section .content #welcomeTxt :nth-child(2) {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* Section Menu*/
+
+/* CONTENT */
+
+.sectionHide {
+    display: none;
+}
+
+/* CONTENT */
+
+
+/* Footer */
+
+#footer {
+    grid-area: footer;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    width: 100%;
+    height: 5em;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer div {
+    width: 100%;
+}
+
+footer .domain {
+    margin-left: 20px;
+    line-height: 35px;
+}
+
+footer  .domain .socials a {
+    text-decoration: 0;
+    color: white;
+}
+
+footer .domain .socials a i {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+footer .copyright {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin-right: 20px;
+}
+
+/* Footer */
