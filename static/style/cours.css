@@ -155,7 +155,7 @@ hr {
     
 }
 
-#becherImg, .imgContainer {
+.imgContainer {
     display: grid;
     place-items: center;
 }
@@ -172,7 +172,7 @@ hr {
 }
 
 
-.equipment > section > ul > li {
+.equipment > section > ul li {
     margin-left: 40px;
 }
 
@@ -217,6 +217,11 @@ hr {
 
     .lesson {
         width: 80%;
+    }
+
+    .lesson > header > nav {
+        width: 300px;
+        gap: 2px;
     }
     
 }
