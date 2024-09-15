@@ -216,7 +216,7 @@ window.data = {
                     "Pour mesurer le temps."
                 ),
                 templateMaterials(
-                    "mumtimetre",
+                    "multimetre",
                     "Multimètre",
                     "multimètre.png",
                     "d'un multimètre",

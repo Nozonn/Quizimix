@@ -40,13 +40,15 @@ def protections(lessonId):
     else:
         return redirect("/page-not-found")
 
+@app.route("/quiz")
+def quiz():
+    return render_template("quiz.html", select="quiz")
+
 @app.route("/game")
 def game():
     return render_template("game.html", select="game")
 
-@app.route("/quiz")
-def quiz():
-    return render_template("quiz.html", select="quiz")
+
 
 @app.route("/page-not-found")
 def pageNotFound():

@@ -1,11 +1,53 @@
 {% extends 'base.html' %}
 
-{% block head %}{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style/quiz.css') }}">
+{% endblock %}
+
 {% block content %}
 
 <main style="grid-area: main;">
-    <p>Quiz</p>
+    <section id="section">
+        <header>
+            <h1 id="title">QUIZ</h1>
+        </header>
+        <hr>
+
+        <div id="classment">
+            <p>Classment</p>
+        </div>
+
+        <div id="viewClassment" style="display: none;"></div>
+
+        <form id="quizMenu" name="player">
+            
+            <input type="text" name="username" id="username" 
+            autocomplete="off" autocapitalize="off" placeholder="Username"
+            class="field">
+
+            <input type="submit" value="Commencer" id="start">
+        </form>
+
+        <div id="quizLoaded">
+            <div id="question">
+                <p>Quel est le nom de ce matériel?</p>
+                <div id="imgContainer">
+                    <img src="" alt="">
+                </div>
+            </div>
+            <form id="response">
+                <div id="btnResponse">
+                    <input type="button" id="choice1" active="false" value="">
+                    <input type="button" id="choice2" active="false" value="">
+                    <input type="button" id="choice3" active="false" value="">
+                    <input type="button" id="choice4" active="false" value="">
+                </div> 
+
+                <input type="submit" value="Confirmer">
+            </form>
+        </div>
+    </section>
 </main>
 
-
+<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
 {% endblock %}
